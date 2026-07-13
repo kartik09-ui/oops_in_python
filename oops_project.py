@@ -3,8 +3,12 @@ class chatbook:
     def __init__(self):
         self.username = ''
         self.password = ''
+        self.user_id = 0
+        self.user_id += 1
         self.loggedin = False
-        self.menu()
+        self.__name = "Defualt name" ## the encapsulation 
+
+        # self.menu()
 
     def menu(self):
         user_input = input('''welcom to chatbook !! How would you like to proceed?
@@ -32,6 +36,14 @@ class chatbook:
         print("You have signed up successfully!!")
         print("\n")
         self.menu()
+
+
+    ## GETTER and SETTER methods
+    def get_name(self):
+        return self.__name
+    
+    def set_name(self, value):
+        self.__name = value
 
     def signin(self):
         if self.username == '' and self.password =='':
