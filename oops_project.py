@@ -1,11 +1,14 @@
 class chatbook:
 
+
+    __user_id = 0
+
     def __init__(self):
         self.username = ''
         self.password = ''
-        self.user_id = 0
-        self.user_id += 1
         self.loggedin = False
+        self.id = chatbook.__user_id
+        chatbook.__user_id += 1
         self.__name = "Defualt name" ## the encapsulation 
 
         # self.menu()
@@ -38,12 +41,21 @@ class chatbook:
         self.menu()
 
 
-    ## GETTER and SETTER methods
+    ## GETTER and SETTER methods for name
     def get_name(self):
         return self.__name
     
     def set_name(self, value):
         self.__name = value
+
+        
+    #  getter and setter methods form user id
+    def get_id():
+        return chatbook.__user_id
+    
+    @staticmethod
+    def set_id(val):  ## in static method we dont give self attribute
+        chatbook.__user_id = val
 
     def signin(self):
         if self.username == '' and self.password =='':
